@@ -14,7 +14,8 @@ Language: en-US
 SystemRequirements: poppler
 Imports:
     sys,
-    tibble
+    tibble,
+    fs
 Suggests:
     testthat
 RoxygenNote: 7.1.1

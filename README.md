@@ -106,7 +106,7 @@ x3 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
 res <- pdimg_images(c(x1, x2, x3))
 vapply(res, NROW, 1)
 #> [1] 6 2 8
-out <- pdimg_detect(res)
+out <- pdimg_filter(res)
 vapply(out, NROW, 1)
 #> [1] 1 0 8
 ```
