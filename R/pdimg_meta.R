@@ -29,6 +29,14 @@
 #' 
 #' # path not found
 #' pdimg_meta("foo-bar")
+#' 
+#' # "inline"?
+#' b <- system.file("examples/FuHughey2019.pdf", package="pdfimager")
+#' pdimg_meta(b)
+#' 
+#' # only detects overlayed smaller images on plots, doesn't detect plots
+#' g <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
+#' pdimg_meta(g)
 pdimg_meta <- function(paths, ...) {
   pdfimages_exists()
   lapply(paths, pdimg_meta_one, ...)
@@ -53,6 +61,11 @@ pdimg_meta_one <- function(path, ...) {
   }
   bits <- strsplit(strsplit(txt, "\n")[[1]][1], "\\s")[[1]]
   nms <- bits[nzchar(bits)]
+  # if (NCOL(tab) == length(nms)) names(tab) <- nms
+  if (NCOL(tab) != length(nms)) {
+    if (is.character(tab$V11))
+      tab <- cbind(tab[,1:11], NA, tab[,12:NCOL(tab)])
+  }
   names(tab) <- nms
   return(tibble::as_tibble(tab))
 }

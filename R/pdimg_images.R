@@ -40,6 +40,11 @@
 #' 
 #' # path not found
 #' pdimg_images("foo-bar")
+#' 
+#' # only gets overlayed smaller images on plots, doesn't get plots
+#' # themselves
+#' g <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
+#' pdimg_images(g)
 pdimg_images <- function(paths, base_dir = NULL, ...) {
   pdfimages_exists()
   if (!is.null(base_dir)) {

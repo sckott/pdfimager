@@ -92,6 +92,25 @@ pdimg_images(x)
 #> #   ratio <chr>
 ```
 
+## attempt to detect the "real plots"
+
+this is a total hack job, hard to detect the real plots
+
+function removes rows of data that aren't likely the "real plots". 
+
+
+```r
+x1 <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
+x2 <- system.file("examples/FuHughey2019.pdf", package="pdfimager")
+x3 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
+res <- pdimg_images(c(x1, x2, x3))
+vapply(res, NROW, 1)
+#> [1] 6 2 8
+out <- pdimg_detect(res)
+vapply(out, NROW, 1)
+#> [1] 1 0 8
+```
+
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/sckott/pdfimager/issues)

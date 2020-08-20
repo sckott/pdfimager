@@ -1,7 +1,7 @@
 Package: pdfimager
 Title: Extract images from pdfs
 Description: Extract images from pdfs using poppler <https://poppler.freedesktop.org/>.
-Version: 0.0.1.91
+Version: 0.0.2.91
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"), 
     email = "myrmecocystus@gmail.com")
