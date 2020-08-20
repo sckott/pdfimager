@@ -53,11 +53,9 @@ x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 pdimg_images(x)
 ```
 
-## attempt to detect the "real plots"
+## filter images
 
-this is a total hack job, hard to detect the real plots
-
-function removes rows of data that aren't likely the "real plots". 
+does a variety of thing to filter images by their metadata, some are configureable
 
 ```{r}
 x1 <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")

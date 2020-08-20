@@ -92,11 +92,9 @@ pdimg_images(x)
 #> #   ratio <chr>
 ```
 
-## attempt to detect the "real plots"
+## filter images
 
-this is a total hack job, hard to detect the real plots
-
-function removes rows of data that aren't likely the "real plots". 
+does a variety of thing to filter images by their metadata, some are configureable
 
 
 ```r
