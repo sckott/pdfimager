@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README.Rmd$
+Makefile
+^codemeta\.json$
+.github
+gnfinder*
+^CODE_OF_CONDUCT\.md$

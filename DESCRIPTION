@@ -1,0 +1,20 @@
+Package: pdfimager
+Title: Extract images from pdfs
+Description: Extract images from pdfs using poppler <https://poppler.freedesktop.org/>.
+Version: 0.0.1.91
+License: MIT + file LICENSE
+Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"), 
+    email = "myrmecocystus@gmail.com")
+URL: https://github.com/sckott/pdfimager
+BugReports: https://github.com/sckott/pdfimager/issues
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
+Language: en-US
+SystemRequirements: poppler
+Imports:
+    sys,
+    tibble
+Suggests:
+    testthat
+RoxygenNote: 7.1.1

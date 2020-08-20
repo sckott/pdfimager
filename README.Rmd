@@ -1,0 +1,60 @@
+pdfimager
+=========
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+[![R-check](https://github.com/sckott/pdfimager/workflows/R-check/badge.svg)](https://github.com/sckott/pdfimager/actions/)
+
+
+`pdfimager` - Extract images from pdfs
+
+This packages uses `sys` R package to "shell out" to pdfimages. Apparently pdfimages is not in poppler cpp, so is not in pdftools R pkg
+
+## Install pdfimages
+
+pdfimages is installed when you install poppler
+
+Installation instructions can be found at <https://poppler.freedesktop.org/>
+
+## Install pdfimager
+
+```{r eval=FALSE}
+remotes::install_github("sckott/pdfimager")
+```
+
+```{r}
+library("pdfimager")
+```
+
+## help info
+
+```{r}
+pdimg_help()
+```
+
+## pdf image metadata
+
+```{r}
+x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
+pdimg_meta(x)
+```
+
+## pdf images
+
+```{r}
+x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
+pdimg_images(x)
+```
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/sckott/pdfimager/issues)
+* License: MIT
+* Please note that the namext project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
