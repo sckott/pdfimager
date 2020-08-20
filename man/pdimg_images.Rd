@@ -23,11 +23,18 @@ is thrown and a zero row data.frame is returned
 \description{
 extract images from a pdf
 }
+\note{
+by default we use temp dir to store extracted images - at the end
+of an R session these are cleaned up (deleted). to store images
+after the R session ends use \code{base_dir}
+}
 \examples{
 # images found
 x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 res <- pdimg_images(x)
 res
+res[[1]]$path
+file.exists(res[[1]]$path[1])
 
 z <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
 pdimg_images(z)

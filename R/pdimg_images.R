@@ -11,11 +11,16 @@
 #' @return data.frames of metadata on images in the pdf. if the path is
 #' not found or the path is found but no images are found, then a warning
 #' is thrown and a zero row data.frame is returned
+#' @note by default we use temp dir to store extracted images - at the end
+#' of an R session these are cleaned up (deleted). to store images 
+#' after the R session ends use `base_dir`
 #' @examples
 #' # images found
 #' x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 #' res <- pdimg_images(x)
 #' res
+#' res[[1]]$path
+#' file.exists(res[[1]]$path[1])
 #' 
 #' z <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
 #' pdimg_images(z)
@@ -64,6 +69,6 @@ pdimg_image <- function(path, dir = NULL, ...) {
   }
   df <- pdimg_meta(path)[[1]]
   ff <- list.files(dirname(dir), full.names=TRUE)
-  if (length(ff) > 0) df$path <- ff
+  if (length(ff) > 0) df <- data.frame(path = ff, df)
   return(tibble::as_tibble(df))
 }

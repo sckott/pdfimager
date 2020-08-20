@@ -83,13 +83,13 @@ x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 pdimg_images(x)
 #> [[1]]
 #> # A tibble: 3 x 17
-#>    page   num type  width height color  comp   bpc enc   interp object    ID
-#>   <int> <int> <chr> <int>  <int> <chr> <int> <int> <chr> <chr>   <int> <int>
-#> 1     5     0 image  1024    573 rgb       3     8 jpeg  yes       178     0
-#> 2     8     1 image  1024   1001 rgb       3     8 jpeg  yes       146     0
-#> 3    11     2 image  1024    988 rgb       3     8 jpeg  yes       110     0
-#> # … with 5 more variables: `x-ppi` <int>, `y-ppi` <int>, size <chr>,
-#> #   ratio <chr>, path <chr>
+#>   path   page   num type  width height color  comp   bpc enc   interp object
+#>   <chr> <int> <int> <chr> <int>  <int> <chr> <int> <int> <chr> <chr>   <int>
+#> 1 /var…     5     0 image  1024    573 rgb       3     8 jpeg  yes       178
+#> 2 /var…     8     1 image  1024   1001 rgb       3     8 jpeg  yes       146
+#> 3 /var…    11     2 image  1024    988 rgb       3     8 jpeg  yes       110
+#> # … with 5 more variables: ID <int>, x.ppi <int>, y.ppi <int>, size <chr>,
+#> #   ratio <chr>
 ```
 
 ## Meta
