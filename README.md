@@ -8,6 +8,8 @@ pdfimager
 
 `pdfimager` - Extract images from pdfs
 
+Docs: <https://sckott.github.io/pdfimager/>
+
 This packages uses `sys` R package to "shell out" to pdfimages. Apparently pdfimages is not in poppler cpp, so is not in pdftools R pkg
 
 ## Install pdfimages

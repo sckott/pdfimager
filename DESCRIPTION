@@ -5,7 +5,8 @@ Version: 0.0.2.91
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"), 
     email = "myrmecocystus@gmail.com")
-URL: https://github.com/sckott/pdfimager
+URL: https://github.com/sckott/pdfimager (source)
+  https://sckott.github.io/pdfimager/ (docs)
 BugReports: https://github.com/sckott/pdfimager/issues
 LazyData: true
 Roxygen: list(markdown = TRUE)
