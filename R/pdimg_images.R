@@ -45,6 +45,11 @@
 #' # themselves
 #' g <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
 #' pdimg_images(g)
+#' 
+#' # number of images doesn't match number of rows of metadata
+#' ## so we fix internally by removing duplicate files for same image
+#' g <- system.file("examples/SanyalEtal2018.pdf", package="pdfimager")
+#' pdimg_images(g)
 pdimg_images <- function(paths, base_dir = NULL, ...) {
   pdfimages_exists()
   if (!is.null(base_dir)) {
@@ -74,6 +79,13 @@ pdimg_image <- function(path, dir = NULL, ...) {
   }
   df <- pdimg_meta(path)[[1]]
   ff <- list.files(dirname(dir), full.names=TRUE)
+  if (length(ff) > NROW(df)) {
+    # definitely a hack: just remove any duplicated files for the same image
+    strs <- vapply(ff, function(z) strsplit(basename(z), "\\.")[[1]][1], "")
+    if (any(duplicated(strs))) {
+      ff <- ff[!duplicated(strs)]
+    }
+  }
   if (length(ff) > 0) df <- data.frame(path = ff, df)
   return(tibble::as_tibble(df))
 }

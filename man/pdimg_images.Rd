@@ -59,4 +59,9 @@ pdimg_images("foo-bar")
 # themselves
 g <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
 pdimg_images(g)
+
+# number of images doesn't match number of rows of metadata
+## so we fix internally by removing duplicate files for same image
+g <- system.file("examples/SanyalEtal2018.pdf", package="pdfimager")
+pdimg_images(g)
 }
