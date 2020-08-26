@@ -6,7 +6,7 @@
 #' @param paths (character) path to a pdf, required
 #' @param base_dir (character) the base path to collect files into. if `NULL`
 #' (default), we use a temp directory
-#' @param ... additional params passed on to `pdfimages`. See 
+#' @param ... additional command line args passed on to `pdfimages`. See 
 #' [pdimg_help()] for docs
 #' @return data.frames of metadata on images in the pdf. if the path is
 #' not found or the path is found but no images are found, then a warning

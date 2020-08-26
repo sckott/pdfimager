@@ -12,7 +12,7 @@ pdimg_images(paths, base_dir = NULL, ...)
 \item{base_dir}{(character) the base path to collect files into. if \code{NULL}
 (default), we use a temp directory}
 
-\item{...}{additional params passed on to \code{pdfimages}. See
+\item{...}{additional command line args passed on to \code{pdfimages}. See
 \code{\link[=pdimg_help]{pdimg_help()}} for docs}
 }
 \value{

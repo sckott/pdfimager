@@ -9,6 +9,5 @@
 pdimg_help <- function() {
   pdfimages_exists()
   z <- sys::exec_internal("pdfimages", "-help", error = FALSE)
-  err_chk(z)
   cat(rawToChar(z$stderr))
 }
