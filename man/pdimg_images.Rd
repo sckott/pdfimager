@@ -39,6 +39,11 @@ file.exists(res[[1]]$path[1])
 z <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
 pdimg_images(z)
 
+# change base directory to hold extracted images
+x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
+dir <- file.path(tempdir(), "bluetree")
+res <- pdimg_images(x, base_dir = dir)
+
 # many at once
 pdimg_images(c(x, z))
 ## pass custom dir to each path

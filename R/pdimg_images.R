@@ -25,6 +25,11 @@
 #' z <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
 #' pdimg_images(z)
 #' 
+#' # change base directory to hold extracted images
+#' x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
+#' dir <- file.path(tempdir(), "bluetree")
+#' res <- pdimg_images(x, base_dir = dir)
+#' 
 #' # many at once
 #' pdimg_images(c(x, z))
 #' ## pass custom dir to each path
@@ -67,10 +72,12 @@ pdimg_image <- function(path, dir = NULL, ...) {
   if (is.null(dir)) {
     dir <- file.path(tempdir(), gsub(".pdf", "", basename(path)), "img")
   } else {
+    # expand path in case there's a tilda or similar
+    dir <- path.expand(dir)
     dir <- file.path(dir, gsub(".pdf", "", basename(path)), "img")
   }
   dir.create(dirname(dir), recursive = TRUE, showWarnings = FALSE)
-  res <- sys::exec_internal("pdfimages", c("-all", ..., path, dir),
+  res <- sys::exec_internal("pdfimages", c(..., path, dir),
     error = FALSE)
   err_chk(res)
   if (res$status != 0) {
