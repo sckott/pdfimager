@@ -16,7 +16,7 @@ pdfimages_exists <- function() {
 }
 
 err_chk <- function(z) {
-  if (z$status != 0) {
+  if (z$status != 0 || length(z$stderr) > 0) {
     err <- rawToChar(z$stderr)
     err <- gsub("Error: ", "", err)
     stop(err, call. = FALSE)
