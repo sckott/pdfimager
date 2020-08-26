@@ -133,7 +133,7 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>additional params passed on to <code>pdfimages</code>. See
+      <td><p>additional command line args passed on to <code>pdfimages</code>. See
 <code><a href='pdimg_help.html'>pdimg_help()</a></code> for docs</p></td>
     </tr>
     </table>
@@ -155,6 +155,10 @@ after the R session ends use <code>base_dir</code></p>
 <span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>pdimg_images</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; <span class='error'>Error in pdfimages_exists(): `pdfimages` not found, see ?pdfimg_meta</span></div><div class='input'><span class='no'>res</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'res' not found</span></div><div class='input'><span class='no'>res</span><span class='kw'>[[</span><span class='fl'>1</span>]]$<span class='no'>path</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'res' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.exists</a></span>(<span class='no'>res</span><span class='kw'>[[</span><span class='fl'>1</span>]]$<span class='no'>path</span>[<span class='fl'>1</span>])</div><div class='output co'>#&gt; <span class='error'>Error in file.exists(res[[1]]$path[1]): object 'res' not found</span></div><div class='input'>
 <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"examples/Tierney2017JOSS.pdf"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"pdfimager"</span>)
 <span class='fu'>pdimg_images</span>(<span class='no'>z</span>)</div><div class='output co'>#&gt; <span class='error'>Error in pdfimages_exists(): `pdfimages` not found, see ?pdfimg_meta</span></div><div class='input'>
+<span class='co'># change base directory to hold extracted images</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"examples/BachmanEtal2020.pdf"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"pdfimager"</span>)
+<span class='no'>dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='st'>"bluetree"</span>)
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='fu'>pdimg_images</span>(<span class='no'>x</span>, <span class='kw'>base_dir</span> <span class='kw'>=</span> <span class='no'>dir</span>)</div><div class='output co'>#&gt; <span class='error'>Error in pdfimages_exists(): `pdfimages` not found, see ?pdfimg_meta</span></div><div class='input'>
 <span class='co'># many at once</span>
 <span class='fu'>pdimg_images</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>x</span>, <span class='no'>z</span>))</div><div class='output co'>#&gt; <span class='error'>Error in pdfimages_exists(): `pdfimages` not found, see ?pdfimg_meta</span></div><div class='input'><span class='co'>## pass custom dir to each path</span>
 <span class='fu'>pdimg_images</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>x</span>, <span class='no'>z</span>), <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='st'>"pepperjackcheese"</span>))</div><div class='output co'>#&gt; <span class='error'>Error in pdfimages_exists(): `pdfimages` not found, see ?pdfimg_meta</span></div><div class='input'>
