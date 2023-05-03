@@ -70,11 +70,11 @@ pdimg_image <- function(path, dir = NULL, ...) {
     return(tibble::tibble())
   }
   if (is.null(dir)) {
-    dir <- file.path(tempdir(), gsub(".pdf", "", basename(path)), "img")
+    dir <- file.path(tempdir(), gsub(".pdf$", "", basename(path)), "img")
   } else {
     # expand path in case there's a tilda or similar
     dir <- path.expand(dir)
-    dir <- file.path(dir, gsub(".pdf", "", basename(path)), "img")
+    dir <- file.path(dir, gsub(".pdf$", "", basename(path)), "img")
   }
   dir.create(dirname(dir), recursive = TRUE, showWarnings = FALSE)
   res <- sys::exec_internal("pdfimages", c(..., path, dir),
