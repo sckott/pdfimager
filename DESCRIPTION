@@ -8,7 +8,6 @@ Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
 URL: https://github.com/sckott/pdfimager (source)
   https://sckott.github.io/pdfimager/ (docs)
 BugReports: https://github.com/sckott/pdfimager/issues
-LazyData: true
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 Language: en-US
@@ -19,4 +18,4 @@ Imports:
     fs
 Suggests:
     testthat
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3

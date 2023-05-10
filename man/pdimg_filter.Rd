@@ -19,13 +19,11 @@ filter images by their metadata
 }
 \examples{
 x1 <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
-x2 <- system.file("examples/FuHughey2019.pdf", package="pdfimager")
-x3 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
-res <- pdimg_images(c(x1, x2, x3))
+x2 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
+res <- pdimg_images(c(x1, x2))
 res
 res[[1]]$path
 res[[2]]$path
-res[[3]]$path
 pdimg_filter(x=res)
 
 x4 <- system.file("examples/Wunderlich2020.pdf", package="pdfimager")

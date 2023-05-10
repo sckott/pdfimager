@@ -30,10 +30,6 @@
 #' # path not found
 #' pdimg_meta("foo-bar")
 #' 
-#' # "inline"?
-#' b <- system.file("examples/FuHughey2019.pdf", package="pdfimager")
-#' pdimg_meta(b)
-#' 
 #' # only detects overlayed smaller images on plots, doesn't detect plots
 #' g <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
 #' pdimg_meta(g)

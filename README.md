@@ -35,9 +35,9 @@ library("pdfimager")
 
 ```r
 pdimg_help()
-#> pdfimages version 0.90.1
-#> Copyright 2005-2020 The Poppler Developers - http://poppler.freedesktop.org
-#> Copyright 1996-2011 Glyph & Cog, LLC
+#> pdfimages version 23.05.0
+#> Copyright 2005-2023 The Poppler Developers - http://poppler.freedesktop.org
+#> Copyright 1996-2011, 2022 Glyph & Cog, LLC
 #> Usage: pdfimages [options] <PDF-file> <image-root>
 #>   -f <int>       : first page to convert
 #>   -l <int>       : last page to convert
@@ -67,14 +67,13 @@ pdimg_help()
 x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 pdimg_meta(x)
 #> [[1]]
-#> # A tibble: 3 x 16
+#> # A tibble: 3 × 16
 #>    page   num type  width height color  comp   bpc enc   interp object    ID
 #>   <int> <int> <chr> <int>  <int> <chr> <int> <int> <chr> <chr>   <int> <int>
 #> 1     5     0 image  1024    573 rgb       3     8 jpeg  yes       178     0
 #> 2     8     1 image  1024   1001 rgb       3     8 jpeg  yes       146     0
 #> 3    11     2 image  1024    988 rgb       3     8 jpeg  yes       110     0
-#> # … with 4 more variables: `x-ppi` <int>, `y-ppi` <int>, size <chr>,
-#> #   ratio <chr>
+#> # ℹ 4 more variables: `x-ppi` <int>, `y-ppi` <int>, size <chr>, ratio <chr>
 ```
 
 ## pdf images
@@ -84,13 +83,13 @@ pdimg_meta(x)
 x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 pdimg_images(x)
 #> [[1]]
-#> # A tibble: 3 x 17
-#>   path   page   num type  width height color  comp   bpc enc   interp object
-#>   <chr> <int> <int> <chr> <int>  <int> <chr> <int> <int> <chr> <chr>   <int>
-#> 1 /var…     5     0 image  1024    573 rgb       3     8 jpeg  yes       178
-#> 2 /var…     8     1 image  1024   1001 rgb       3     8 jpeg  yes       146
-#> 3 /var…    11     2 image  1024    988 rgb       3     8 jpeg  yes       110
-#> # … with 5 more variables: ID <int>, x.ppi <int>, y.ppi <int>, size <chr>,
+#> # A tibble: 3 × 17
+#>   path       page   num type  width height color  comp   bpc enc   interp object
+#>   <chr>     <int> <int> <chr> <int>  <int> <chr> <int> <int> <chr> <chr>   <int>
+#> 1 /var/fol…     5     0 image  1024    573 rgb       3     8 jpeg  yes       178
+#> 2 /var/fol…     8     1 image  1024   1001 rgb       3     8 jpeg  yes       146
+#> 3 /var/fol…    11     2 image  1024    988 rgb       3     8 jpeg  yes       110
+#> # ℹ 5 more variables: ID <int>, x.ppi <int>, y.ppi <int>, size <chr>,
 #> #   ratio <chr>
 ```
 
@@ -101,14 +100,13 @@ does a variety of thing to filter images by their metadata, some are configureab
 
 ```r
 x1 <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
-x2 <- system.file("examples/FuHughey2019.pdf", package="pdfimager")
-x3 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
-res <- pdimg_images(c(x1, x2, x3))
+x2 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
+res <- pdimg_images(c(x1, x2))
 vapply(res, NROW, 1)
-#> [1] 6 2 8
+#> [1] 6 8
 out <- pdimg_filter(res)
 vapply(out, NROW, 1)
-#> [1] 1 0 8
+#> [1] 1 8
 ```
 
 ## Meta
