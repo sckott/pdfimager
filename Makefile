@@ -11,7 +11,7 @@ doc:
 	${RSCRIPT} -e "devtools::document()"
 
 eg:
-	${RSCRIPT} -e "devtools::run_examples(run=TRUE)"
+	${RSCRIPT} -e "devtools::run_examples(run_dontrun=TRUE)"
 
 test:
 	${RSCRIPT} -e "devtools::test()"
