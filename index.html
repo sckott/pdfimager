@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Extract images from pdfs • pdfimager</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -19,7 +19,7 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -47,7 +47,7 @@
 <li>
   <a href="https://github.com/sckott/pdfimager/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -58,7 +58,7 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="contents col-md-9">
@@ -79,7 +79,8 @@
 <h2 id="install-pdfimager">Install pdfimager<a class="anchor" aria-label="anchor" href="#install-pdfimager"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"sckott/pdfimager"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"sckott/pdfimager"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/sckott/pdfimager" class="external-link">"pdfimager"</a></span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -88,29 +89,30 @@
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/pdimg_help.html">pdimg_help</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; pdfimages version 23.05.0</span></span>
-<span><span class="co">#&gt; Copyright 2005-2023 The Poppler Developers - http://poppler.freedesktop.org</span></span>
+<span><span class="co">#&gt; pdfimages version 24.04.0</span></span>
+<span><span class="co">#&gt; Copyright 2005-2024 The Poppler Developers - http://poppler.freedesktop.org</span></span>
 <span><span class="co">#&gt; Copyright 1996-2011, 2022 Glyph &amp; Cog, LLC</span></span>
 <span><span class="co">#&gt; Usage: pdfimages [options] &lt;PDF-file&gt; &lt;image-root&gt;</span></span>
-<span><span class="co">#&gt;   -f &lt;int&gt;       : first page to convert</span></span>
-<span><span class="co">#&gt;   -l &lt;int&gt;       : last page to convert</span></span>
-<span><span class="co">#&gt;   -png           : change the default output format to PNG</span></span>
-<span><span class="co">#&gt;   -tiff          : change the default output format to TIFF</span></span>
-<span><span class="co">#&gt;   -j             : write JPEG images as JPEG files</span></span>
-<span><span class="co">#&gt;   -jp2           : write JPEG2000 images as JP2 files</span></span>
-<span><span class="co">#&gt;   -jbig2         : write JBIG2 images as JBIG2 files</span></span>
-<span><span class="co">#&gt;   -ccitt         : write CCITT images as CCITT files</span></span>
-<span><span class="co">#&gt;   -all           : equivalent to -png -tiff -j -jp2 -jbig2 -ccitt</span></span>
-<span><span class="co">#&gt;   -list          : print list of images instead of saving</span></span>
-<span><span class="co">#&gt;   -opw &lt;string&gt;  : owner password (for encrypted files)</span></span>
-<span><span class="co">#&gt;   -upw &lt;string&gt;  : user password (for encrypted files)</span></span>
-<span><span class="co">#&gt;   -p             : include page numbers in output file names</span></span>
-<span><span class="co">#&gt;   -q             : don't print any messages or errors</span></span>
-<span><span class="co">#&gt;   -v             : print copyright and version info</span></span>
-<span><span class="co">#&gt;   -h             : print usage information</span></span>
-<span><span class="co">#&gt;   -help          : print usage information</span></span>
-<span><span class="co">#&gt;   --help         : print usage information</span></span>
-<span><span class="co">#&gt;   -?             : print usage information</span></span></code></pre></div>
+<span><span class="co">#&gt;   -f &lt;int&gt;                 : first page to convert</span></span>
+<span><span class="co">#&gt;   -l &lt;int&gt;                 : last page to convert</span></span>
+<span><span class="co">#&gt;   -png                     : change the default output format to PNG</span></span>
+<span><span class="co">#&gt;   -tiff                    : change the default output format to TIFF</span></span>
+<span><span class="co">#&gt;   -j                       : write JPEG images as JPEG files</span></span>
+<span><span class="co">#&gt;   -jp2                     : write JPEG2000 images as JP2 files</span></span>
+<span><span class="co">#&gt;   -jbig2                   : write JBIG2 images as JBIG2 files</span></span>
+<span><span class="co">#&gt;   -ccitt                   : write CCITT images as CCITT files</span></span>
+<span><span class="co">#&gt;   -all                     : equivalent to -png -tiff -j -jp2 -jbig2 -ccitt</span></span>
+<span><span class="co">#&gt;   -list                    : print list of images instead of saving</span></span>
+<span><span class="co">#&gt;   -opw &lt;string&gt;            : owner password (for encrypted files)</span></span>
+<span><span class="co">#&gt;   -upw &lt;string&gt;            : user password (for encrypted files)</span></span>
+<span><span class="co">#&gt;   -p                       : include page numbers in output file names</span></span>
+<span><span class="co">#&gt;   -print-filenames         : print image filenames to stdout</span></span>
+<span><span class="co">#&gt;   -q                       : don't print any messages or errors</span></span>
+<span><span class="co">#&gt;   -v                       : print copyright and version info</span></span>
+<span><span class="co">#&gt;   -h                       : print usage information</span></span>
+<span><span class="co">#&gt;   -help                    : print usage information</span></span>
+<span><span class="co">#&gt;   --help                   : print usage information</span></span>
+<span><span class="co">#&gt;   -?                       : print usage information</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="pdf-image-metadata">pdf image metadata<a class="anchor" aria-label="anchor" href="#pdf-image-metadata"></a>
@@ -223,16 +225,16 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer>
 </div>
 
-  
 
 
-  
+
+
 
   </body>
 </html>
