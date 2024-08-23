@@ -21,49 +21,51 @@ Installation instructions can be found at <https://poppler.freedesktop.org/>
 ## Install pdfimager
 
 
-```r
-remotes::install_github("sckott/pdfimager")
+``` r
+# install.packages("pak")
+pak::pak("sckott/pdfimager")
 ```
 
 
-```r
+``` r
 library("pdfimager")
 ```
 
 ## help info
 
 
-```r
+``` r
 pdimg_help()
-#> pdfimages version 23.05.0
-#> Copyright 2005-2023 The Poppler Developers - http://poppler.freedesktop.org
+#> pdfimages version 24.04.0
+#> Copyright 2005-2024 The Poppler Developers - http://poppler.freedesktop.org
 #> Copyright 1996-2011, 2022 Glyph & Cog, LLC
 #> Usage: pdfimages [options] <PDF-file> <image-root>
-#>   -f <int>       : first page to convert
-#>   -l <int>       : last page to convert
-#>   -png           : change the default output format to PNG
-#>   -tiff          : change the default output format to TIFF
-#>   -j             : write JPEG images as JPEG files
-#>   -jp2           : write JPEG2000 images as JP2 files
-#>   -jbig2         : write JBIG2 images as JBIG2 files
-#>   -ccitt         : write CCITT images as CCITT files
-#>   -all           : equivalent to -png -tiff -j -jp2 -jbig2 -ccitt
-#>   -list          : print list of images instead of saving
-#>   -opw <string>  : owner password (for encrypted files)
-#>   -upw <string>  : user password (for encrypted files)
-#>   -p             : include page numbers in output file names
-#>   -q             : don't print any messages or errors
-#>   -v             : print copyright and version info
-#>   -h             : print usage information
-#>   -help          : print usage information
-#>   --help         : print usage information
-#>   -?             : print usage information
+#>   -f <int>                 : first page to convert
+#>   -l <int>                 : last page to convert
+#>   -png                     : change the default output format to PNG
+#>   -tiff                    : change the default output format to TIFF
+#>   -j                       : write JPEG images as JPEG files
+#>   -jp2                     : write JPEG2000 images as JP2 files
+#>   -jbig2                   : write JBIG2 images as JBIG2 files
+#>   -ccitt                   : write CCITT images as CCITT files
+#>   -all                     : equivalent to -png -tiff -j -jp2 -jbig2 -ccitt
+#>   -list                    : print list of images instead of saving
+#>   -opw <string>            : owner password (for encrypted files)
+#>   -upw <string>            : user password (for encrypted files)
+#>   -p                       : include page numbers in output file names
+#>   -print-filenames         : print image filenames to stdout
+#>   -q                       : don't print any messages or errors
+#>   -v                       : print copyright and version info
+#>   -h                       : print usage information
+#>   -help                    : print usage information
+#>   --help                   : print usage information
+#>   -?                       : print usage information
 ```
 
 ## pdf image metadata
 
 
-```r
+``` r
 x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 pdimg_meta(x)
 #> [[1]]
@@ -79,7 +81,7 @@ pdimg_meta(x)
 ## pdf images
 
 
-```r
+``` r
 x <- system.file("examples/BachmanEtal2020.pdf", package="pdfimager")
 pdimg_images(x)
 #> [[1]]
@@ -98,7 +100,7 @@ pdimg_images(x)
 does a variety of thing to filter images by their metadata, some are configureable
 
 
-```r
+``` r
 x1 <- system.file("examples/Tierney2017JOSS.pdf", package="pdfimager")
 x2 <- system.file("examples/vanGemert2018.pdf", package="pdfimager")
 res <- pdimg_images(c(x1, x2))

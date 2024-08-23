@@ -28,7 +28,8 @@ Installation instructions can be found at <https://poppler.freedesktop.org/>
 ## Install pdfimager
 
 ```{r eval=FALSE}
-remotes::install_github("sckott/pdfimager")
+# install.packages("pak")
+pak::pak("sckott/pdfimager")
 ```
 
 ```{r}

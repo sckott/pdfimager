@@ -9,4 +9,16 @@
 Extract images from pdfs using poppler
 \url{https://poppler.freedesktop.org/}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/sckott/pdfimager (source) https://sckott.github.io/pdfimager/ (docs)}
+  \item Report bugs at \url{https://github.com/sckott/pdfimager/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Scott Chamberlain \email{myrmecocystus@gmail.com}
+
+}
 \keyword{package}
