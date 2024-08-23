@@ -75,21 +75,87 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/Tierney2017JOSS.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/vanGemert2018.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="pdimg_images.html">pdimg_images</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">x1</span>, <span class="va">x2</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in pdfimages_exists():</span> `pdfimages` not found, see ?pdfimg_meta</span>
 <span class="r-in"><span><span class="va">res</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   path       page   num type  width height color  comp   bpc enc   interp object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> /var/fol…     1     0 image   650    249 rgb       3     8 image no          6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> /var/fol…     1     1 smask   650    249 gray      1     8 image no          6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> /var/fol…     2     2 image   650    249 rgb       3     8 image no          6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> /var/fol…     2     3 smask   650    249 gray      1     8 image no          6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> /var/fol…     2     4 image   672    480 icc       3     8 image no         41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> /var/fol…     2     5 smask   672    480 gray      1     8 image no         41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: ID &lt;int&gt;, x.ppi &lt;int&gt;, y.ppi &lt;int&gt;, size &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ratio &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   path       page   num type  width height color  comp   bpc enc   interp object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> /var/fol…     1     0 image  <span style="text-decoration: underline;">1</span>491    256 cmyk      4     8 jpeg  no        352</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> /var/fol…     3     1 image   121     53 sep       1     8 jpeg  no         84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> /var/fol…     3     2 image   114     86 sep       1     8 jpeg  no         83</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> /var/fol…     3     3 image   108     39 sep       1     8 jpeg  no         82</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> /var/fol…     5     4 image    25    117 sep       1     8 image no        141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> /var/fol…     5     5 image    17     34 sep       1     8 image no        140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> /var/fol…     5     6 image    19     91 sep       1     8 image no        139</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> /var/fol…     5     7 image    18     69 sep       1     8 image no        138</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: ID &lt;int&gt;, x.ppi &lt;int&gt;, y.ppi &lt;int&gt;, size &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ratio &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">path</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/Tierney2017JOSS/img-000.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/Tierney2017JOSS/img-001.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/Tierney2017JOSS/img-002.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/Tierney2017JOSS/img-003.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/Tierney2017JOSS/img-004.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/Tierney2017JOSS/img-005.ppm"</span>
 <span class="r-in"><span><span class="va">res</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">path</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-000.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-001.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-002.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-003.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-004.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-005.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-006.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [8] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpVskMuR/vanGemert2018/img-007.ppm"</span>
 <span class="r-in"><span><span class="fu">pdimg_filter</span><span class="op">(</span>x<span class="op">=</span><span class="va">res</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   path       page   num type  width height color  comp   bpc enc   interp object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> /var/fol…     2     4 image   672    480 icc       3     8 image no         41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: ID &lt;int&gt;, x.ppi &lt;int&gt;, y.ppi &lt;int&gt;, size &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ratio &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   path       page   num type  width height color  comp   bpc enc   interp object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> /var/fol…     1     0 image  <span style="text-decoration: underline;">1</span>491    256 cmyk      4     8 jpeg  no        352</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> /var/fol…     3     1 image   121     53 sep       1     8 jpeg  no         84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> /var/fol…     3     2 image   114     86 sep       1     8 jpeg  no         83</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> /var/fol…     3     3 image   108     39 sep       1     8 jpeg  no         82</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> /var/fol…     5     4 image    25    117 sep       1     8 image no        141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> /var/fol…     5     5 image    17     34 sep       1     8 image no        140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> /var/fol…     5     6 image    19     91 sep       1     8 image no        139</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> /var/fol…     5     7 image    18     69 sep       1     8 image no        138</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: ID &lt;int&gt;, x.ppi &lt;int&gt;, y.ppi &lt;int&gt;, size &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ratio &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">x4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/Wunderlich2020.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="pdimg_images.html">pdimg_images</a></span><span class="op">(</span><span class="va">x4</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in pdfimages_exists():</span> `pdfimages` not found, see ?pdfimg_meta</span>
 <span class="r-in"><span><span class="fu">pdimg_filter</span><span class="op">(</span><span class="va">res</span>, min_size <span class="op">=</span> <span class="st">"100K"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   path       page   num type  width height color  comp   bpc enc   interp object</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> /var/fol…     8     4 image  <span style="text-decoration: underline;">1</span>294    755 rgb       3     8 image no        118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: ID &lt;int&gt;, x.ppi &lt;int&gt;, y.ppi &lt;int&gt;, size &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ratio &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </div>
