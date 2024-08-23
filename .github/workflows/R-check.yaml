@@ -45,7 +45,7 @@ jobs:
           sudo apt-get install -y libpoppler-cpp-dev libpoppler-dev poppler-utils
 
       - name: Install Poppler on Windows
-        if: matrix.os == 'windows-latest'
+        if: runner.os == 'Windows'
         run: |
           choco install --no-progress poppler
       
