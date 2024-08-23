@@ -2,12 +2,11 @@
 % Please edit documentation in R/pdfimager-package.R
 \docType{package}
 \name{pdfimager-package}
-\alias{pdfimager-package}
 \alias{pdfimager}
-\title{pdfimager}
+\alias{pdfimager-package}
+\title{pdfimager: Extract images from pdfs}
 \description{
-Extract images from pdfs using poppler
-\url{https://poppler.freedesktop.org/}
+Extract images from pdfs using poppler \url{https://poppler.freedesktop.org/}.
 }
 \seealso{
 Useful links:
@@ -21,4 +20,4 @@ Useful links:
 \strong{Maintainer}: Scott Chamberlain \email{myrmecocystus@gmail.com}
 
 }
-\keyword{package}
+\keyword{internal}
