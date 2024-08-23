@@ -47,7 +47,7 @@ jobs:
       - name: Install Poppler on Windows
         if: runner.os == 'Windows'
         run: |
-          choco install --no-progress poppler
+          scoop install poppler
       
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
