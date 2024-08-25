@@ -10,8 +10,10 @@ assert <- function(x, y) {
 last <- function(x) x[length(x)]
 
 pdfimages_exists <- function() {
-  z <- Sys.which("pdfimages")
-  if (z == "") stop("`pdfimages` not found, see ?pdfimg_meta")
+  z <- Sys.which(pdimg_env$pdimages_path)
+  if (z == "") {
+    stop("`pdfimages` not found, see ?pdimg_set_path", call. = FALSE)
+  }
   return(TRUE)
 }
 
