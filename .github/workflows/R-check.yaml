@@ -50,8 +50,6 @@ jobs:
           choco install --no-progress poppler
       
       - uses: r-lib/actions/setup-r-dependencies@v2
-        env:
-          PDFIMAGER_PATH: C:\ProgramData\chocolatey\lib\poppler\tools\pdfimages.exe
         with:
           extra-packages: any::rcmdcheck
           needs: check
@@ -59,3 +57,5 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
+        env:
+          PDFIMAGER_PATH: C:\ProgramData\chocolatey\lib\poppler\tools\pdfimages.exe
