@@ -58,4 +58,4 @@ jobs:
         with:
           upload-snapshots: true
         env:
-          PDFIMAGER_PATH: C:\ProgramData\chocolatey\lib\poppler\tools\pdfimages.exe
+          PDFIMAGER_PATH: C:/ProgramData/chocolatey/lib/poppler/tools/pdfimages.exe
