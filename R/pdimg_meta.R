@@ -43,7 +43,8 @@ pdimg_meta_one <- function(path, ...) {
     warning("path '", path, "' does not exist", call.=FALSE)
     return(tibble::tibble())
   }
-  meta <- sys::exec_internal("pdfimages", c("-all", "-list", ..., path),
+  meta <- sys::exec_internal(
+    pdimg_env$pdimages_path, c("-all", "-list", ..., path),
     error = FALSE)
   err_chk(meta)
   txt <- rawToChar(meta$stdout)

@@ -77,7 +77,7 @@ pdimg_image <- function(path, dir = NULL, ...) {
     dir <- file.path(dir, gsub(".pdf$", "", basename(path)), "img")
   }
   dir.create(dirname(dir), recursive = TRUE, showWarnings = FALSE)
-  res <- sys::exec_internal("pdfimages", c(..., path, dir),
+  res <- sys::exec_internal(pdimg_env$pdimages_path, c(..., path, dir),
     error = FALSE)
   err_chk(res)
   if (res$status != 0) {
