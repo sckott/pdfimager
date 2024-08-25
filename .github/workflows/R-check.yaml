@@ -55,6 +55,13 @@ jobs:
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
+        if: runner.os != 'Windows'
+        with:
+          upload-snapshots: true
+
+      - name: R Check on Windows
+        uses: r-lib/actions/check-r-package@v2
+        if: runner.os == 'Windows'
         with:
           upload-snapshots: true
         env:
