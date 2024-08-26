@@ -2,7 +2,7 @@
 % Please edit documentation in R/pdimg_set_path.R
 \name{pdimg_set_path}
 \alias{pdimg_set_path}
-\title{Set path}
+\title{Set the path to your pdfimages}
 \usage{
 pdimg_set_path(path = "pdimages")
 }
@@ -18,9 +18,4 @@ Set the path to your pdfimages
 \details{
 \code{path} is set on an internal (not exported) package environmenzt
 variable \code{pdimages_path}
-}
-\examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-pdimg_set_path("adfadf")
-\dontshow{\}) # examplesIf}
 }
