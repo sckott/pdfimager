@@ -59,10 +59,11 @@ jobs:
         with:
           upload-snapshots: true
 
+      - name: Set pdfimages env for Windows
+        run: echo "PDFIMAGER_PATH=$(where.exe pdfimages)" >> $GITHUB_ENV
+
       - name: R Check on Windows
         uses: r-lib/actions/check-r-package@v2
         if: runner.os == 'Windows'
         with:
           upload-snapshots: true
-        env:
-          PDFIMAGER_PATH: C:/ProgramData/chocolatey/lib/poppler/tools/pdfimages.exe
