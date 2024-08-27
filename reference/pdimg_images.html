@@ -17,13 +17,16 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pdfimager</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.4.91</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/sckott/pdfimager/" class="external-link">
@@ -101,9 +104,9 @@ after the R session ends use <code>base_dir</code></p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ratio &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">path</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/BachmanEtal2020/img-000.ppm"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/BachmanEtal2020/img-001.ppm"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/BachmanEtal2020/img-002.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/BachmanEtal2020/img-000.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/BachmanEtal2020/img-001.ppm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/BachmanEtal2020/img-002.ppm"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">path</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
@@ -249,11 +252,11 @@ after the R session ends use <code>base_dir</code></p>
 <span class="r-in"><span><span class="co"># it's not documented</span></span></span>
 <span class="r-in"><span><span class="va">j</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/SanyalEtal2018.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">pdimg_images</span><span class="op">(</span><span class="va">j</span>, format <span class="op">=</span> <span class="st">"-png"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">path</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/SanyalEtal2018/img-000.png"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/SanyalEtal2018/img-001.pbm"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/SanyalEtal2018/img-002.png"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/SanyalEtal2018/img-003.png"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpiF4TM3/SanyalEtal2018/img-004.png"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/SanyalEtal2018/img-000.png"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/SanyalEtal2018/img-001.pbm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/SanyalEtal2018/img-002.png"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/SanyalEtal2018/img-003.png"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "/var/folders/4d/0gnh84wj53j7wyk695q0tc_80000gn/T//RtmpdJvXuk/SanyalEtal2018/img-004.png"</span>
 </code></pre></div>
     </div>
   </div>
