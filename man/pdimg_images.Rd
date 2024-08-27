@@ -67,6 +67,11 @@ pdimg_images(g)
 
 # number of images doesn't match number of rows of metadata
 ## so we fix internally by removing duplicate files for same image
-g <- system.file("examples/SanyalEtal2018.pdf", package="pdfimager")
-pdimg_images(g)
+h <- system.file("examples/SanyalEtal2018.pdf", package="pdfimager")
+pdimg_images(h)
+
+# convert to another format - not entirely sure how this works,
+# it's not documented
+j <- system.file("examples/SanyalEtal2018.pdf", package="pdfimager")
+pdimg_images(j, format = "-png")[[1]]$path[1:5]
 }
