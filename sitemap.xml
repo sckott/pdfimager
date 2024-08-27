@@ -5,11 +5,13 @@
 <url><loc>/LICENSE-text.html</loc></url>
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
+<url><loc>/reference/has_pdfimages.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 <url><loc>/reference/pdfimager-package.html</loc></url>
 <url><loc>/reference/pdimg_filter.html</loc></url>
 <url><loc>/reference/pdimg_help.html</loc></url>
 <url><loc>/reference/pdimg_images.html</loc></url>
 <url><loc>/reference/pdimg_meta.html</loc></url>
+<url><loc>/reference/pdimg_set_path.html</loc></url>
 </urlset>
 
