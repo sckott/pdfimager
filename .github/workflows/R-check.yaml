@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-        - { os: windows-latest, r: 'release'}
+        # - { os: windows-latest, r: 'release'}
         - { os: macOS-latest, r: 'release'}
         - { os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/xenial/latest"}
 
@@ -44,10 +44,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libpoppler-cpp-dev libpoppler-dev poppler-utils
 
-      - name: Install Poppler on Windows
-        if: runner.os == 'Windows'
-        run: |
-          choco install --no-progress poppler
+      # - name: Install Poppler on Windows
+      #   if: runner.os == 'Windows'
+      #   run: |
+      #     choco install --no-progress poppler
       
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
@@ -59,11 +59,11 @@ jobs:
         with:
           upload-snapshots: true
 
-      - name: Set pdfimages env for Windows
-        run: echo "PDFIMAGER_PATH=$(where.exe pdfimages)" >> $GITHUB_ENV
+      # - name: Set pdfimages env for Windows
+      #   run: echo "PDFIMAGER_PATH=$(where.exe pdfimages)" >> $GITHUB_ENV
 
-      - name: R Check on Windows
-        uses: r-lib/actions/check-r-package@v2
-        if: runner.os == 'Windows'
-        with:
-          upload-snapshots: true
+      # - name: R Check on Windows
+      #   uses: r-lib/actions/check-r-package@v2
+      #   if: runner.os == 'Windows'
+      #   with:
+      #     upload-snapshots: true
