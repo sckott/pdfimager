@@ -31,6 +31,28 @@ pak::pak("sckott/pdfimager")
 library("pdfimager")
 ```
 
+## Set the path
+
+Some users may need to manually set the path to `pdfimages`. 
+
+You can do so with a function in this package like
+
+```r
+pdimg_set_path()
+``` 
+
+or  set the path for pdfimages before starting R with an env var like:
+
+```
+PDFIMAGER_PATH=C:/some/path/to/poppler/24/bin/pdfimages.exe R
+```
+ 
+Or set within R like:
+
+```r
+Sys.setenv(PDFIMAGER_PATH="C:/some/path/to/poppler/24/bin/pdfimages.exe")
+```
+
 ## help info
 
 
