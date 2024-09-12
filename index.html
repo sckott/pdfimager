@@ -88,9 +88,22 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/sckott/pdfimager" class="external-link">"pdfimager"</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
+<h2 id="set-the-path">Set the path<a class="anchor" aria-label="anchor" href="#set-the-path"></a>
+</h2>
+<p>Some users may need to manually set the path to <code>pdfimages</code>.</p>
+<p>You can do so with a function in this package like</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/pdimg_set_path.html">pdimg_set_path</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>or set the path for pdfimages before starting R with an env var like:</p>
+<pre><code>PDFIMAGER_PATH=C:/some/path/to/poppler/24/bin/pdfimages.exe R</code></pre>
+<p>Or set within R like:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>PDFIMAGER_PATH<span class="op">=</span><span class="st">"C:/some/path/to/poppler/24/bin/pdfimages.exe"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="help-info">help info<a class="anchor" aria-label="anchor" href="#help-info"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/pdimg_help.html">pdimg_help</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; pdfimages version 24.04.0</span></span>
 <span><span class="co">#&gt; Copyright 2005-2024 The Poppler Developers - http://poppler.freedesktop.org</span></span>
@@ -120,7 +133,7 @@
 <div class="section level2">
 <h2 id="pdf-image-metadata">pdf image metadata<a class="anchor" aria-label="anchor" href="#pdf-image-metadata"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/BachmanEtal2020.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pdimg_meta.html">pdimg_meta</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
@@ -135,7 +148,7 @@
 <div class="section level2">
 <h2 id="pdf-images">pdf images<a class="anchor" aria-label="anchor" href="#pdf-images"></a>
 </h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/BachmanEtal2020.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pdimg_images.html">pdimg_images</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
@@ -152,7 +165,7 @@
 <h2 id="filter-images">filter images<a class="anchor" aria-label="anchor" href="#filter-images"></a>
 </h2>
 <p>does a variety of thing to filter images by their metadata, some are configureable</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/Tierney2017JOSS.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span>
 <span><span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"examples/vanGemert2018.pdf"</span>, package<span class="op">=</span><span class="st">"pdfimager"</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/pdimg_images.html">pdimg_images</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">x1</span>, <span class="va">x2</span><span class="op">)</span><span class="op">)</span></span>

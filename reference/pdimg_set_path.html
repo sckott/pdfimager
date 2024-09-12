@@ -72,6 +72,11 @@
     <h2>Details</h2>
     <p><code>path</code> is set on an internal (not exported) package environmenzt
 variable <code>pdimages_path</code></p>
+<p>You can also set the path for pdfimages before starting R with an
+env var like:
+<code>PDFIMAGER_PATH=C:/some/path/to/poppler/24/bin/pdfimages.exe R</code></p>
+<p>Or set within R like:
+Sys.setenv(PDFIMAGER_PATH="C:/some/path/to/poppler/24/bin/pdfimages.exe")</p>
     </div>
 
   </div>
